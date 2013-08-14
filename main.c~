@@ -1,0 +1,22 @@
+
+#define USE_STDPERIPH_DRIVER
+#include "stm32f10x.h"
+#include "MyHeader.h"
+
+int I;
+
+void myDelay(unsigned long delay )
+{
+    while(delay) delay--;
+}
+
+int main(void)
+{
+    MyInitialize();
+    USART_ITConfig(USART2, USART_IT_TXE, ENABLE);
+    I=USART2;
+    while (1);
+    USART_ITConfig(USART2, USART_IT_TXE, DISABLE);
+
+}
+

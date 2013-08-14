@@ -1,0 +1,15 @@
+file main.elf
+b main
+target remote :3333
+c
+#watch I
+b 8
+c
+#P I
+#Hello!
+call USART_SendData(1073759232,'H')
+call USART_SendData(1073759232,'e')
+call USART_SendData(1073759232,'l')
+call USART_SendData(1073759232,'l')
+call USART_SendData(1073759232,'o')
+call USART_SendData(1073759232,'!')
